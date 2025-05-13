@@ -63,3 +63,17 @@ function displayCurrentDate() {
     dateElement.textContent = today.toLocaleDateString(undefined, options);
   }
 }
+const courses = [
+  { name: "Web Development", completed: true },
+  { name: "Database Design", completed: true},
+  { name: "C# Programming", completed: true }
+];
+
+const courseList = document.getElementById("courseList");
+
+courses.forEach(course => {
+  const li = document.createElement("li");
+  li.textContent = course.name + (course.completed ? " ✅ (Completed)" : " ❌ (In Progress)");
+  li.style.color = course.completed ? "green" : "gray";
+  courseList.appendChild(li);
+});
