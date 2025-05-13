@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Benedicta Etim</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header
-  >
-  <img src="images/profile.png" alt="Portrait of Benedicta" width="80" height="80">
-    <h1>Benedicta  Etim</h1>
+  <header>
+    <img src="images/profile.png" alt="Portrait of Benedicta" width="80" height="80">
+    <h1>Benedicta Etim</h1>
     <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="chamber/index.html">Chamber</a></li>
-      <li><a href="final/index.html">Final</a></li>
-      <li><a href="https://github.com/bennyasi" target="_blank">GitHub Profile</a></li>
-      <li><a href="https://www.linkedin.com/in/benedicta-etim-a05563140" target="_blank">LinkedIn</a></li>
-    </ul>
-  </nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chamber/index.html">Chamber</a></li>
+        <li><a href="final/index.html">Final</a></li>
+        <li><a href="https://github.com/bennyasi" target="_blank">GitHub Profile</a></li>
+        <li><a href="https://www.linkedin.com/in/benedicta-etim-a05563140" target="_blank">LinkedIn</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-     <h1>Home</h1>
+    <h1>Home</h1>
     <section class="top-section">
       <div class="card">
         <h2>Course Work</h2>
@@ -38,31 +37,33 @@
 
       <div class="card">
         <h2>Lagos, Nigeria</h2>
-        <img src="images/Lagos.png" alt="Lagos" class="location-img" />
+        <img src="images/Lagos.png" alt="Lagos" class="location-img">
         <p class="caption">Lagos</p>
       </div>
     </section>
 
     <section class="certificate">
       <h2>Web and Computer Programming Certificate</h2>
+
       <div class="filter-buttons">
-       <div class="filter-buttons">
-  <button class="active" data-filter="all">All</button>
-  <button data-filter="cse">CSE</button>
-  <button data-filter="wdd">WDD</button>
-</div>
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="cse">CSE</button>
+        <button data-filter="wdd">WDD</button>
+      </div>
 
-<div class="courses">
-  <button class="course cse">CSE 110</button>
-  <button class="course wdd">WDD 130</button>
-  <button class="course cse">CSE 111</button>
-  <button class="course cse">CSE 210</button>
-  <button class="course wdd">WDD 131</button>
-  <button class="course wdd">WDD 231</button>
-</div>
+      <p>Total Credits: <span id="credit-total">0</span></p>
 
+      <div class="courses">
+        <!-- CSE total: 6 credits -->
+        <button class="course cse completed" data-credits="6">CSE 110</button>
+        <button class="course cse" data-credits="6">CSE 111</button>
+        <button class="course cse" data-credits="6">CSE 210</button>
 
-    </div>
+        <!-- WDD total: 6 credits -->
+        <button class="course wdd completed" data-credits="6">WDD 130</button>
+        <button class="course wdd" data-credits="6">WDD 131</button>
+        <button class="course wdd" data-credits="6">WDD 231</button> 
+      </div>
     </section>
   </main>
 
@@ -71,7 +72,7 @@
     <p>Last Update: 10/05/2025 10:44:00</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Nigeria.svg" alt="Nigeria Flag" width="30">
   </footer>
+  
   <script src="script.js"></script>
-
 </body>
 </html>
