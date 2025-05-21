@@ -5,14 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Directory of Chamber of Commerce members – find businesses and organizations near you." />
+    content="Director of Chamber of Commerce members – find businesses and organizations near you." />
   <meta name="author" content="Benedicta Etim" />
   <meta name="theme-color" content="#2a2a2a" />
 
-  <title>Oshogo Chamber of Commerce Directory</title>
+  <title>Oshogo Chamber of Commerce Director</title>
 
-  <link rel="stylesheet" href="styles/bass.css" />
-  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="favicon.ico">
+
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +61,15 @@
   <main>
     <img src="images/banner.webp" alt="Banner" class="banner" />
     <div class="home">
-      <h1>Home</h1>
+     <section id="directors">
+    <h2>Directors</h2>
+     <!-- Director cards will be added here -->
+   </section>
+
+   <section id="member-directory" class="grid-view">
+   <!-- All member cards will be here -->
+   </section>
+
 
       <section class="view-buttons">
         <button id="grid-view">Grid View</button>
@@ -102,9 +111,12 @@
         </p>
         <p><span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
       </div>
+      <script src="scripts/scripts.js"></script>
+
     </div>
   </footer>
 
 </body>
 
 </html>
+
