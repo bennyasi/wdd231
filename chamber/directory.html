@@ -1,39 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Director of Chamber of Commerce members – find businesses and organizations near you." />
+  <meta name="description" content="Directory of Chamber of Commerce members – find businesses and organizations near you." />
   <meta name="author" content="Benedicta Etim" />
   <meta name="theme-color" content="#2a2a2a" />
-
-  <title>Oshogo Chamber of Commerce Director</title>
-
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="icon" href="favicon.ico">
-
-
+  <title>Obokun Chamber of Commerce Directory</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="icon" href="favicon.ico" />
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Roboto:wght@100..900&display=swap"
-    rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Roboto:wght@100..900&display=swap" rel="stylesheet" />
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Directory" />
-  <meta property="og:description"
-    content="Explore local businesses and organizations in our Chamber of Commerce. This is an economic hub for CEOs and budding business professionals within Osogbo and its environs." />
+  <meta property="og:description" content="Explore local businesses and organizations in our Chamber of Commerce. This is an economic hub for CEOs and budding business professionals within Osogbo and its environs." />
   <meta property="og:image" content="images/icon.png" />
   <meta property="og:url" content="http://127.0.0.1:5500/wdd231/chamber/directory.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Directory" />
-
+  <!-- JavaScript -->
   <script src="scripts/scripts.js" defer></script>
+  <script src="scripts/directory.js" defer></script>
+  <script src="scripts/view-toggle.js" defer></script>
 </head>
-
-
 <body>
   <header>
     <nav>
@@ -44,14 +35,10 @@
           <span class="logo-subtitle">Chamber of Commerce</span>
         </div>
       </div>
-
-      <!-- Hamburger Icon for Mobile -->
       <button class="hamburger" id="hamburger">&#9776;</button>
-
-      <!-- Navigation Links -->
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html">Directory</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
         <li><a href="join.html">Join</a></li>
         <li><a href="discover.html">Discover</a></li>
       </ul>
@@ -59,39 +46,32 @@
   </header>
 
   <main>
-    <img src="images/banner.webp" alt="Banner" class="banner" />
-    <div class="home">
-     <section id="directors">
-    <h2>Directors</h2>
-     <!-- Director cards will be added here -->
-   </section>
+    <section class="hero-banner">
+      <img src="images/banner.webp" alt="Chamber Banner" class="banner" />
+    </section>
 
-   <section id="member-directory" class="grid-view">
-   <!-- All member cards will be here -->
-   </section>
+    <section class="directory-controls">
+      <h2>Member Directory</h2>
+      <div class="view-toggle">
+        <button id="gridView">Grid View</button>
+        <button id="listView">List View</button>
+      </div>
+    </section>
 
-
-      <section class="view-buttons">
-        <button id="grid-view">Grid View</button>
-        <button id="list-view">List View</button>
-      </section>
-
-      <section id="member-directory" class="grid-view">
-        <!-- JavaScript will populate this section with member cards -->
-      </section>
-    </div>
+    <section class="directory grid">
+      <!-- JavaScript will populate member cards here -->
+    </section>
   </main>
 
   <footer>
     <div class="footer-content">
       <div class="footer-left">
-        <p><strong>Obokun Chamber of Commerce</strong><br>
-          57, Okefia Crescent Obokun Osogbo, Nigeria<br>
-          contact@Osogbochamber.com<br>
-          +2348038573366
+        <p><strong>Obokun Chamber of Commerce</strong><br />
+          57, Okefia Crescent Obokun Osogbo, Nigeria<br />
+          <a href="mailto:contact@osogbochamber.com">contact@osogbochamber.com</a><br />
+          <a href="tel:+2348038573366">+234 803 857 3366</a>
         </p>
       </div>
-
       <div class="footer-center">
         <a href="https://youtube.com" target="_blank" aria-label="YouTube">
           <img src="images/youtube.png" alt="YouTube" />
@@ -101,22 +81,21 @@
         </a>
         <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
           <img src="images/linkedin.png" alt="LinkedIn" />
-      </a>
+        </a>
       </div>
-
       <div class="footer-right">
-        <p>WDD 231 Class Project<br>
-          Benedicta Etim<br>
-          &copy; Obokun Chamber of Commerce
-        </p>
-        <p><span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
+        <p>WDD 231 Class Project<br />
+          Benedicta Etim<br />
+          &copy; <span id="year"></span> Obokun Chamber of Commerce</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
       </div>
-      <script src="scripts/scripts.js"></script>
-
     </div>
   </footer>
 
+  <script>
+    // Year and Last Modified Date
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = document.lastModified;
+  </script>
 </body>
-
 </html>
-
