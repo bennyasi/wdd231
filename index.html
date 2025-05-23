@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Benedicta Etim</title>
-  <link rel="stylesheet" href="styles/styles.css">
+  <title>Benedicta Etim - Course Home Page</title>
+  <meta name="description"
+    content="This page is designed to serve as home page for a web page on Chamber of Commerce in the city where I reside, being a centre of economic hub itself.">
+  <meta name="author" content="Benedicta Etim">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Roboto:wght@100..900&display=swap"
+    rel="stylesheet">
+  <script src="scripts/course.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/navigation.js" defer></script>
 </head>
+
 <body>
   <header>
-    <img src="images/profile.png" alt="Portrait of Benedicta" width="80" height="80">
-    <h1>Benedicta Etim</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
+    <div class="header-container">
+      <button id="menuToggle" aria-label="Toggle navigation">☰</button>
+      <div class="title">
+        <img src="images/profile.png" alt="Israel Ojo" width="120">
+        <span>Benedicta Etim</span>
+      </div>
+    </div>
+  </header>
+
+  <nav id="navMenu">
+    <ul>
+     <li><a href="index.html">Home</a></li>
         <li><a href="chamber/index.html">Chamber</a></li>
         <li><a href="final/index.html">Final</a></li>
         <li><a href="https://github.com/bennyasi" target="_blank">GitHub Profile</a></li>
         <li><a href="https://www.linkedin.com/in/benedicta-etim-a05563140" target="_blank">LinkedIn</a></li>
-      </ul>
-    </nav>
-  </header>
+    </ul>
+
+  </nav>
 
   <main>
     <h1>Home</h1>
-    <section class="top-section">
-      <div class="card">
-        <h2>Course Work</h2>
+    <div class="container">
+      <section class="left">
+        <h2 class="section-title">Course Work</h2>
         <ul>
           <li>HTML, CSS, and JavaScript fundamentals</li>
           <li>Object-oriented programming in Python and C#</li>
@@ -33,47 +53,32 @@
           <li>Version control with Git and GitHub</li>
           <li>Software development principles and best practices</li>
         </ul>
+      </section>
+
+      <section class="right">
+        <h2 class="section-title">Lagos, Nigeria</h2>
+        <img src="images/lagos.png" alt="Lagos, Nigeria">
+      </section>
+    </div>
+
+    <section class="course">
+      <h2>Web and Computer Programming</h2>
+      <div id="certificationFilter" class="filters">
+        <!-- Filter buttons go here (All, CSE, WDD) -->
       </div>
 
-      <div class="card">
-        <h2>Lagos, Nigeria</h2>
-        <img src="images/Lagos.png" alt="Lagos" class="location-img">
-        <p class="caption">Lagos</p>
-      </div>
-    </section>
-
-    <section class="certificate">
-      <ul id="courseList"></ul>
-      <h2>Web and Computer Programming Certificate</h2>
-      <div class="filter-buttons">
-        <button class="active" data-filter="all">All</button>
-        <button data-filter="cse">CSE</button>
-        <button data-filter="wdd">WDD</button>
-      </div>
-
-      <p>Total Credits: <span id="credit-total">0</span></p>
-      
-
-      <div class="courses">
-        <!-- CSE total: 6 credits -->
-        <button class="course cse completed" data-credits="6">CSE 110</button>
-        <button class="course cse" data-credits="6">CSE 111</button>
-        <button class="course cse" data-credits="6">CSE 210</button>
-
-        <!-- WDD total: 6 credits -->
-        <button class="course wdd completed" data-credits="6">WDD 130</button>
-        <button class="course wdd" data-credits="6">WDD 131</button>
-        <button class="course wdd" data-credits="6">WDD 231</button> 
+      <div id="courseContent" class="course-grid">
+        <!-- Course cards will be dynamically inserted here -->
       </div>
     </section>
   </main>
 
   <footer>
-    <p>©2025 🌸 Benedicta Etim Nigeria</p>
-    <p>Last Update: 05/13/2025 4:54:00</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Nigeria.svg" alt="Nigeria Flag" width="30">
+    <p>© <span id="currentYear"></span> |Benedicta Etim | Lagos, Nigeria.
+      <img src="images/flag.png" alt="flag" class="footer-flag">
+    </p>
+    <p class="modified"><span id="lastModified"></span></p>
   </footer>
-  
-  <script src="script.js"></script>
 </body>
+
 </html>
