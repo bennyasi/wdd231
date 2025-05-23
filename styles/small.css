@@ -1,0 +1,280 @@
+:root {
+  /* Color Palette */
+  --primary-color: 	#8B008B;          /* Dark blue for strong contrast */
+  --secondary-color: #8B008B;        /* Mid blue */
+  --highlight-color: #c6f2c6;        /* Soft green for highlights */
+  --warning-color: #ffe4cc;          /* Soft orange for warnings */
+  --neutral-background: #f9f9f9;     /* Light neutral for general backgrounds */
+  --white: #ffffff;
+  --black: #000000;
+  
+  /* Text Colors */
+  --text-color: #000000;             /* Body text – black for AAA compliance */
+  --high-contrast-text: #111111;     /* Heading and emphasis text */
+
+  /* Accent Colors */
+  --blue-hover: #00509e;             /* Used for hover – dark enough for AAA */
+  --blue-active: #003f73;            /* Active state – darker blue */
+  --blue-active-hover: #003b61;      /* Hover while active */
+}
+
+/* === Base Styles === */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--neutral-background);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2 {
+  font-family: 'Domine', serif;
+  color: var(--high-contrast-text);
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5em;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+/* Section Title */
+.section-title {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* === Layout Containers === */
+header,
+main,
+footer {
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  height: 120px;
+  text-align: center;
+}
+
+/* === Header Branding === */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 0.5rem;
+}
+
+.title img {
+  width: 150px;
+  height: 120px;
+  border-radius: 5%;
+}
+
+.title span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+/* === Navigation Menu === */
+#menuToggle {
+  display: none;
+}
+
+#navMenu {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--black);
+  width: 100%;
+}
+
+#navMenu ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navMenu a {
+  display: block;
+  padding: 1rem 5rem;
+  text-decoration: none;
+  color: var(--white);
+  transition: background 0.3s ease;
+}
+
+#navMenu a:hover {
+  color: var(--blue-hover);
+}
+
+#navMenu a.active {
+  color: var(--blue-active);
+}
+
+/* === Main Content Layout === */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding: 1rem 0;
+}
+
+.container > section {
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+section.left {
+  flex: 0 0 65%;
+  margin-left: 50px;
+}
+
+section.right {
+  flex: 0 0 25%;
+  margin-right: 50px;
+}
+
+section.right img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* === Course Section === */
+section.course {
+  margin: 0 50px;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  max-width: 90%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section.course h2 {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* === Certification Filter Buttons === */
+#certificationFilter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+#certificationFilter a {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-width: 100px;
+  text-align: center;
+}
+
+#certificationFilter a:hover {
+  background-color: var(--blue-active-hover);
+  transform: translateY(-2px);
+}
+
+#certificationFilter a.active {
+  background-color: var(--blue-active);
+}
+
+/* === Course Grid and Cards === */
+#courseContent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: var(--neutral-background);
+  border-radius: 8px;
+}
+
+.course-card {
+  background-color: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+}
+
+.course-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* === Course Status Colors === */
+.course-card.completed h2 {
+  background-color: hwb(208 1% 94%); /* Black*/
+  color: var(--white);
+}
+
+.course-card.pending h2 {
+  background-color: #ffc107; /* Yellow */
+  color: #000000;
+}
+
+/* === Credit Summary === */
+#total-credits {
+  margin-top: 2rem;
+  font-weight: bold;
+  background-color: #eef;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* === Footer === */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer img.footer-flag {
+  width: 20px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 8px;
+}
