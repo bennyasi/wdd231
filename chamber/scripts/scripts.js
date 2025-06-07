@@ -282,3 +282,5 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error("Error loading discover.json:", error));
 });
+
+
