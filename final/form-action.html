@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Form submission results - Banose Nigeria Limited">
+  <meta name="author" content="Benedicta Etim">
+  <meta name="theme-color" content="#2a2a2a">
+
+  <title>Form Submission - Banose Nigeria Limited</title>
+
+  <link rel="stylesheet" href="styles/bass.css">
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="images/icon.jpeg" alt="Banose Logo" class="logo">
+        <div class="logo-text">
+          <span class="logo-title">Banose Nigeria Limited</span>
+          <span class="logo-subtitle">Pure Natural Honey</span>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-action-container">
+      <h1>Thank You for Your Submission</h1>
+      <p class="tagline">We’ve received your application successfully.</p>
+
+      <div class="form-data" aria-live="polite">
+        <h2>Submitted Information</h2>
+        <div class="data-display">
+          <!-- Dynamic content populated by JavaScript -->
+        </div>
+      </div>
+
+      <div class="back-button">
+        <a href="join.html" class="btn" aria-label="Return to Join Form">Back to Join Form</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <p>
+          <strong>Banose Nigeria Limited</strong><br>
+          70a Adebayo Doherty Road, Lekki Phase 1, Lagos, Nigeria<br>
+          <a href="mailto:contact@banosenig.com">contact@banosenig.com</a><br>
+          +234 816 626 4777
+        </p>
+      </div>
+      <div class="footer-center">
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+          <img src="images/youtube.png" alt="YouTube icon">
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <img src="images/x.png" alt="Twitter icon">
+        </a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+          <img src="images/linkedin.png" alt="LinkedIn icon">
+        </a>
+      </div>
+      <div class="footer-right">
+        <p>
+          WDD 231 Final Project<br>
+          Benedicta Etim<br>
+          &copy; <span id="year"></span> Banose Nigeria Limited
+        </p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Update Footer Year and Modified Date
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = document.lastModified;
+
+    // Toggle navigation for small screens
+    document.getElementById("hamburger").addEventListener("click", () => {
+      document.getElementById("navLinks").classList.toggle("show");
+    });
+
+    // Parse and display form data
+    document.addEventListener("DOMContentLoaded", () => {
+      const dataDisplay = document.querySelector(".data-display");
+      const formData = new URLSearchParams(window.location.search);
+
+      if ([...formData].length === 0) {
+        dataDisplay.innerHTML = "<p>No data submitted.</p>";
+        return;
+      }
+
+      const ul = document.createElement("ul");
+
+      formData.forEach((value, key) => {
+        const li = document.createElement("li");
+
+        const fieldName = document.createElement("span");
+        fieldName.className = "field-name";
+        fieldName.textContent = key.charAt(0).toUpperCase() + key.slice(1).replace(/[-_]/g, " ") + ": ";
+
+        const fieldValue = document.createElement("span");
+        fieldValue.className = "field-value";
+        fieldValue.textContent = decodeURIComponent(value);
+
+        li.appendChild(fieldName);
+        li.appendChild(fieldValue);
+        ul.appendChild(li);
+      });
+
+      const card = document.createElement("div");
+      card.className = "data-card";
+      card.appendChild(ul);
+      dataDisplay.appendChild(card);
+    });
+  </script>
+</body>
+
+</html>

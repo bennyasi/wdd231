@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn more about Banose Nigeria Limited - Our story, mission, and the team behind our impact.">
+  <meta name="author" content="Benedicta Etim">
+  <meta name="theme-color" content="#2a2a2a">
+
+  <title>About Us - Banose Nigeria Limited</title>
+
+  <link rel="stylesheet" href="styles/bass.css">
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="About Us - Banose Nigeria Limited">
+  <meta property="og:description" content="Discover how Banose Nigeria Limited is empowering beekeepers and promoting sustainability throughout Nigeria.">
+  <meta property="og:image" content="images/banose.png">
+  <meta property="og:url" content="https://banosenigeria.org/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Banose Nigeria Limited">
+
+  <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="images/icon.jpeg" alt="Banose Logo" class="logo" loading="lazy">
+        <div class="logo-text">
+          <span class="logo-title">Banose Nigeria Limited</span>
+          <span class="logo-subtitle">Empowering Beekeepers</span>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <img src="images/banner.webp" alt="Banose community event" class="banner" loading="lazy">
+    <section class="about-container">
+      <h1>About Banose Nigeria Limited</h1>
+      <p class="tagline">Empowering beekeepers and promoting sustainability across Nigeria.</p>
+
+      <h2>Our Story</h2>
+      <p>Banose Nigeria Limited was established with a powerful goal – to unite beekeepers across Nigeria and elevate the beekeeping industry. From humble beginnings, we've grown into a national movement advocating for sustainable practices and community empowerment.</p>
+
+      <h2>Our Mission</h2>
+      <p>To empower beekeepers, ensure environmental sustainability, and enhance honey production across Nigeria.</p>
+
+      <h2>Our Vision</h2>
+      <p>To be the leading voice for the beekeeping community in West Africa, fostering economic growth and ecological responsibility.</p>
+
+      <h2>Our Team</h2>
+      <ul>
+        <li><strong>Miss Benedicta Anoasi</strong> – Founder & CEO</li>
+        <li><strong>Greatness Effiom</strong> – Vice President</li>
+        <li><strong>Gracious Etim</strong> – Secretary General</li>
+        <li><strong>Emmanuel Oqua</strong> – Public Relations Officer</li>
+      </ul>
+
+      <button id="openModalBtn" class="btn">Learn About Our Process</button>
+    </section>
+
+    <!-- Modal Dialog -->
+    <dialog id="aboutModal" class="modal-content" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+      <h3 id="modalTitle">Our Process</h3>
+      <p id="modalDesc">We connect smallholder farmers, facilitate training, and support honey certification and marketing nationally and globally.</p>
+      <button id="closeModalBtn" class="btn">Close</button>
+    </dialog>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <p>
+          <strong>Banose Nigeria Limited</strong><br>
+          70a Adebayo Doherty, Lekki Phase 1, Lagos, Nigeria<br>
+          <a href="mailto:contact@banosenig.com">contact@banosenig.com</a><br>
+          +234 816 626 4777
+        </p>
+      </div>
+
+      <div class="footer-center">
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+          <img src="images/youtube.png" alt="YouTube" loading="lazy">
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <img src="images/x.png" alt="Twitter" loading="lazy">
+        </a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+          <img src="images/linkedin.png" alt="LinkedIn" loading="lazy">
+        </a>
+      </div>
+
+      <div class="footer-right">
+        <p>WDD 231 Final Project<br>Benedicta Etim<br>&copy; <span id="year"></span> Banose Nigeria Limited</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal & Nav Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Footer year and modification date
+      document.getElementById("year").textContent = new Date().getFullYear();
+      document.getElementById("lastModified").textContent = document.lastModified;
+
+      // Hamburger nav
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      hamburger.addEventListener("click", () => navLinks.classList.toggle("show"));
+
+      // Modal dialog logic
+      const modal = document.getElementById("aboutModal");
+      const openModalBtn = document.getElementById("openModalBtn");
+      const closeModalBtn = document.getElementById("closeModalBtn");
+
+      openModalBtn.addEventListener("click", () => modal.showModal());
+      closeModalBtn.addEventListener("click", () => modal.close());
+    });
+  </script>
+</body>
+
+</html>
