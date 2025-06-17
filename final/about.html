@@ -54,8 +54,20 @@
   <!-- Main Content -->
   <main>
     <img src="images/banner.webp" alt="Banose community event" class="banner" loading="lazy">
+
+    <!-- Local Storage Greeting Section -->
+    <section class="name-section">
+      <h2>Welcome</h2>
+      <p id="greeting">Hello! Let us know who you are.</p>
+      <form id="nameForm">
+        <label for="visitorName">Your Name:</label>
+        <input type="text" id="visitorName" name="visitorName" required>
+        <button type="submit" class="btn">Save My Name</button>
+      </form>
+    </section>
+
     <section class="about-container">
-      <h2> BANOSE NIGERIA LIMITED</h2>
+      <h2>BANOSE NIGERIA LIMITED</h2>
       <p class="tagline">Empowering beekeepers and promoting sustainability across Nigeria.</p>
 
       <h2>Our Story</h2>
@@ -108,6 +120,7 @@
         <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
           <img src="images/linkedin.png" alt="LinkedIn" loading="lazy">
         </a>
+        </a>
       </div>
 
       <div class="footer-right">
@@ -117,7 +130,7 @@
     </div>
   </footer>
 
-  <!-- Modal & Nav Script -->
+  <!-- Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // Footer year and modification date
@@ -129,13 +142,32 @@
       const navLinks = document.getElementById("navLinks");
       hamburger.addEventListener("click", () => navLinks.classList.toggle("show"));
 
-      // Modal dialog logic
+      // Modal logic
       const modal = document.getElementById("aboutModal");
       const openModalBtn = document.getElementById("openModalBtn");
       const closeModalBtn = document.getElementById("closeModalBtn");
 
       openModalBtn.addEventListener("click", () => modal.showModal());
       closeModalBtn.addEventListener("click", () => modal.close());
+
+      // Local Storage greeting logic
+      const nameForm = document.getElementById("nameForm");
+      const greeting = document.getElementById("greeting");
+
+      const savedName = localStorage.getItem("visitorName");
+      if (savedName) {
+        greeting.textContent = `Welcome back, ${savedName}!`;
+      }
+
+      nameForm?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("visitorName").value.trim();
+        if (name) {
+          localStorage.setItem("visitorName", name);
+          greeting.textContent = `Nice to meet you, ${name}!`;
+          nameForm.reset();
+        }
+      });
     });
   </script>
 </body>
