@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Explore premium honey products from Banose Nigeria Limited." />
-  <meta name="author" content="Benedicta Etim" />
-  <meta name="theme-color" content="#2a2a2a" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore premium honey products from Banose Nigeria Limited.">
+  <meta name="author" content="Benedicta Etim">
+  <meta name="theme-color" content="#2a2a2a">
   <title>Products - Banose Nigeria Limited</title>
 
-  <link rel="stylesheet" href="styles/bass.css" />
-  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles/bass.css">
+  <link rel="icon" href="favicon.ico">
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Roboto:wght@100..900&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet">
 
   <!-- Open Graph Meta -->
-  <meta property="og:title" content="Products - Banose Nigeria Limited" />
-  <meta property="og:description" content="Browse Nigerian wild honey, skincare, candles, and wellness products." />
-  <meta property="og:image" content="images/banose.png" />
-  <meta property="og:url" content="https://banosenigeria.org/products.html" />
-  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Products - Banose Nigeria Limited">
+  <meta property="og:description" content="Browse Nigerian wild honey, skincare, candles, and wellness products.">
+  <meta property="og:image" content="images/banose.png">
+  <meta property="og:url" content="https://banosenigeria.org/products.html">
+  <meta property="og:type" content="website">
 </head>
 <body>
   <header>
     <nav>
       <div class="logo-container">
-        <img src="images/icon.jpeg" alt="Banose Logo" class="logo" loading="lazy" />
+        <img src="images/icon.jpeg" alt="Banose Logo" class="logo" loading="lazy">
         <div class="logo-text">
           <span class="logo-title">Banose Nigeria Limited</span>
           <span class="logo-subtitle">Nature's Best from Nigeria</span>
@@ -48,7 +47,7 @@
   </header>
 
   <main>
-    <img src="images/banner.webp" alt="Banner of Banose products" class="banner" loading="lazy" />
+    <img src="images/banner.webp" alt="Banner of Banose products" class="banner" loading="lazy">
     <div class="home">
       <h1>EXPLORE OUR PRODUCTS</h1>
 
@@ -68,29 +67,27 @@
     <div class="footer-content">
       <div class="footer-left">
         <p>
-          <strong>Banose Nigeria Limited</strong><br />
-          70a Adebayo Doherty, Lekki Phase 1, Lagos, Nigeria<br />
-          <a href="mailto:contact@banosenig.com">contact@banosenig.com</a><br />
+          <strong>Banose Nigeria Limited</strong><br>
+          70a Adebayo Doherty, Lekki Phase 1, Lagos, Nigeria<br>
+          <a href="mailto:contact@banosenig.com">contact@banosenig.com</a><br>
           +234 816 626 4777
         </p>
       </div>
       <div class="footer-center">
         <a href="https://youtube.com" target="_blank" aria-label="YouTube">
-          <img src="images/youtube.png" alt="YouTube icon" />
+          <img src="images/youtube.png" alt="YouTube icon">
         </a>
         <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-          <img src="images/x.png" alt="Twitter icon" />
+          <img src="images/x.png" alt="Twitter icon">
         </a>
         <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-          <img src="images/linkedin.png" alt="LinkedIn icon" />
-        </a>
-        
+          <img src="images/linkedin.png" alt="LinkedIn icon">
         </a>
       </div>
       <div class="footer-right">
         <p>
-          WDD 231 Final Project<br />
-          Benedicta Etim <br />
+          WDD 231 Final Project<br>
+          Benedicta Etim <br>
           &copy; <span id="year"></span> Banose Nigeria Limited
         </p>
         <p>Last Modified: <span id="lastModified"></span></p>
@@ -207,7 +204,7 @@
           category: "Health Supplements",
           origin: "Nigeria",
           image: "images/ginger-honey-tonic.jpg",
-        },
+        }
       ];
 
       function loadViewMode() {
@@ -227,14 +224,13 @@
           const card = document.createElement("div");
           card.classList.add("product-card");
           card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" />
+            <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p><strong>Description:</strong> ${product.description}</p>
             <p><strong>Category:</strong> ${product.category}</p>
             <p><strong>Origin:</strong> ${product.origin}</p>
             <button class="view-details-btn">View Details</button>
           `;
-
           card.querySelector(".view-details-btn").addEventListener("click", () => {
             localStorage.setItem("selectedProduct", JSON.stringify(product));
             console.log("Selected product saved:", product);
@@ -245,7 +241,6 @@
         });
       }
 
-      // Initialize
       loadViewMode();
       displayProducts(products);
 
@@ -261,7 +256,6 @@
         saveViewMode("list");
       });
 
-      // Footer year and last modified
       document.getElementById("year").textContent = new Date().getFullYear();
       document.getElementById("lastModified").textContent = document.lastModified;
     });
